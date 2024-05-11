@@ -1,0 +1,26 @@
+[pyprland]
+plugins = [
+    "scratchpads",
+]
+
+[scratchpads.pavucontrol]
+animation = "fromRight"
+command = "pavucontrol -t 3"
+class = "pavucontrol"
+lazy = true
+size = "20% 30%"
+position = "79% 5%"
+unfocus = "hide"
+allow_special_workspaces = true
+smart_focus = false
+
+[scratchpads.stb]
+animation = "fromTop"
+command = "alacritty --class dropin"
+class = "dropin"
+lazy = true
+size = "70% 35%"
+position = "15% 5%"
+unfocus = "hide"
+allow_special_workspaces = true
+smart_focus = false

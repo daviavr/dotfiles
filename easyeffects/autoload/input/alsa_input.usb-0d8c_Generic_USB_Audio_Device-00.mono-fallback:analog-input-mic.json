@@ -1,0 +1,6 @@
+{
+    "device": "alsa_input.usb-0d8c_Generic_USB_Audio_Device-00.mono-fallback",
+    "device-description": "Audio Adapter (Planet UP-100, Genius G-Talk) Mono",
+    "device-profile": "analog-input-mic",
+    "preset-name": "noise_reduction"
+}

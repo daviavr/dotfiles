@@ -1,0 +1,6 @@
+{
+    "device": "alsa_output.usb-0d8c_Generic_USB_Audio_Device-00.analog-stereo",
+    "device-description": "Audio Adapter (Planet UP-100, Genius G-Talk) Analog Stereo",
+    "device-profile": "analog-output-speaker",
+    "preset-name": "no_effects"
+}

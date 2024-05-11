@@ -1,0 +1,82 @@
+[ids]
+2e88:b30a
+
+[main]
+capslock = layer(capskeys)
+alt = layer(fake_numpad)
+rightcontrol = oneshot(toggle_layers)
+
+[custom_layout]
+1 = +
+2 = ]
+3 = S-]
+4 = ( 
+5 = =
+6 = &
+7 = )
+8 = S-\
+9 = \
+0 = *
+- = !
+equal = @
+; = /
+\ = S-3
+] = $
+[ = ` 
+, = -
+. = .
+/ = ,
+ro = .
+' = ro
+#'
+
+[custom_layout+shift]
+1 = 1
+2 = 2
+3 = 3
+4 = 4 
+5 = 5
+6 = 6
+7 = 7
+8 = 8
+9 = 9
+0 = 0
+- = macro(S-' S-')
+; = S-/
+\ = %
+] = macro(S-[ S-[)
+[ = S-` 
+ro = S-ro
+' = macro(' ')
+#'
+/ = S-.
+. = S-,
+, = _
+
+[fake_numpad:A]
+u = 7
+i = 8
+o = 9
+j = 4
+k = 5
+l = 6
+m = 1
+, = 2
+. = 3
+space = 0
+
+[capskeys:C]
+p = M-p
+m = M-m
+n = M-n
+h = left
+k = up
+j = down
+l = right
+' = end 
+#'
+; = home
+backspace = delete
+
+[toggle_layers]
+rightcontrol = toggle(custom_layout)

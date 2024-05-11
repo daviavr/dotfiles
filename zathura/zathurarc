@@ -1,0 +1,6 @@
+set selection-clipboard clipboard
+map <C-i> zoom in
+map <C-o> zoom out
+set window-height 1152
+set window-width 1032
+set adjust-open "best-fit"
