@@ -1,3 +1,19 @@
-- clean: []
-- link: {}
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+- clean: ['~','~/.config']
+- link: 
+    ~/.zshrc:
+    ~/.gitconfig:
+    ~/.config/zathura: zathura
+    ~/.local/scripts: scripts
+    ~/.config/waybar: waybar
+    ~/.config/hypr: hypr
+    ~/.config/tofi: tofi
+    ~/.config/VSCodium/User/settings.json: vscode/settings.json
+    ~/.config/VSCodium/User/keybindings.json: vscode/keybindings.json
+    ~/.config/easyeffects: easyeffects
+    ~/.config/alacritty: alacritty
 - shell: []

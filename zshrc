@@ -6,6 +6,8 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 
+export PATH=$PATH:/home/davi/.spicetify
+
 export PATH=$HOME/.local/bin:$PATH
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
@@ -127,4 +129,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=$PATH:/home/davi/.spicetify
