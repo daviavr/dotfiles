@@ -1,10 +1,12 @@
 [ids]
 2e88:b30a
+0001:0001
 
 [main]
 capslock = layer(capskeys)
 alt = layer(fake_numpad)
 rightcontrol = oneshot(toggle_layers)
+rightalt = oneshot(toggle_layers)
 
 [custom_layout]
 1 = +
@@ -80,3 +82,4 @@ backspace = delete
 
 [toggle_layers]
 rightcontrol = toggle(custom_layout)
+rightalt = toggle(custom_layout)
