@@ -13,7 +13,7 @@
     "workbench.editor.labelFormat": "short",
     "breadcrumbs.enabled": false,
     "notebook.lineNumbers": "on",
-    "window.zoomLevel": 0.9,
+    "window.zoomLevel": 1.5,
     "editor.bracketPairColorization.enabled": true,
     "vim.overrideCopy": true,
     "vim.useSystemClipboard": true,
