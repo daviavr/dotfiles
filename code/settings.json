@@ -1,0 +1,122 @@
+{
+    "gruvboxMaterial.darkContrast": "hard",
+    "errorLens.enabled": true,
+    "window.titleBarStyle": "custom",
+    "telemetry.telemetryLevel": "crash",
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "editor.lineNumbers": "relative",
+    
+    "explorer.compactFolders": false,
+    "workbench.editor.labelFormat": "short",
+    "breadcrumbs.enabled": false,
+    "notebook.lineNumbers": "on",
+    "window.zoomLevel": 0.9,
+    "editor.bracketPairColorization.enabled": true,
+    "vim.overrideCopy": true,
+    "vim.useSystemClipboard": true,
+    "workbench.iconTheme": "material-icon-theme",
+    //KeyBindings
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "k"
+            ],
+            "after": [
+                "g",
+                "k",
+            ]
+        },
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "g",
+                "j",
+            ]
+        },
+        {
+            "before": [
+                "<C-d>"
+            ],
+            "after": [
+                "<C-d>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "<C-u>"
+            ],
+            "after": [
+                "<C-u>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "n"
+            ],
+            "after": [
+                "n",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "N"
+            ],
+            "after": [
+                "N",
+                "z",
+                "z"
+            ]
+        },
+    ],
+    "python.languageServer": "Pylance",
+
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.tokenColorCustomizations": {
+        "[*Dark*]": {
+            "textMateRules": [
+                {
+                    // function parameters
+                    "scope": "variable.parameter",
+                    "settings": {
+                        "fontStyle": "",
+                        "foreground": "#c97a31"
+                    }
+                },
+                //{
+                    //// language constants such as bools
+                    //"scope": "constant.language",
+                    //"settings": {
+                        //"fontStyle": "",
+                        //"foreground": "#FF299E"
+                    //}
+                //}
+            ]
+        }
+    },
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+    },
+    "files.associations": {
+        "*.confi3": "i3"
+    },
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "zenMode.centerLayout": true,
+    "zenMode.restore": true,
+    "editor.wordWrap": "on"
+}
