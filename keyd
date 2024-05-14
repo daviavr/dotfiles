@@ -8,6 +8,9 @@ alt = layer(fake_numpad)
 rightcontrol = oneshot(toggle_layers)
 rightalt = oneshot(toggle_layers)
 
+[shift]
+esc = S-`
+
 [custom_layout]
 1 = +
 2 = ]

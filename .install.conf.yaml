@@ -15,4 +15,5 @@
     ~/.config/VSCodium/User/keybindings.json: vscode/keybindings.json
     ~/.config/easyeffects: easyeffects
     ~/.config/alacritty: alacritty
+    /etc/keyd/default.conf: keyd
 - shell: []
