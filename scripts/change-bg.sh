@@ -12,11 +12,11 @@ if [[ $1 == "first" ]]; then
 	currentFile=$(find $wallpapersPath -maxdepth 1 -type f | shuf -n 1)
 	for (( i=0; i < $length; i++ )); do
 		if [[ "${arrayOfFiles[$i]}" == "$currentFile" ]]; then
-			echo "$saveContent" > $file
+			echo "$i" > $file
 			break
 		fi
 	done
-	pkill swaybg ; swaybg -m fill -i $currentFile &
+	pkill swaybg && sleep 1; swaybg -m fill -i $currentFile &
 else
 	i=$(cat "$file" | awk '{print $1}')
 	
@@ -29,7 +29,7 @@ else
 	pid=( $(pidof swaybg) )
 	#echo ${pid[-1]}
 	swaybg -m fill -i "$newCurrentFile" &
-	sleep 0.1 && kill -9 $pid
+	sleep 0.05 && kill -9 $pid
 	echo "$i" > $file
 fi
 

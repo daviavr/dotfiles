@@ -12,6 +12,8 @@ export PATH=$HOME/.local/bin:$PATH
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
+export ZSH_TMUX_AUTOSTART=true
+
 export NNN_TMPFILE="/tmp/nnn"
 
 nnn_cd()                                                                                                   
@@ -99,6 +101,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
 git
 zsh-autosuggestions
+tmux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -128,4 +131,20 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/davi/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/davi/.miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/davi/.miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/davi/.miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
