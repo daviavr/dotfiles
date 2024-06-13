@@ -118,5 +118,7 @@
     "workbench.colorTheme": "Gruvbox Material Dark",
     "zenMode.centerLayout": true,
     "zenMode.restore": true,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "git.openRepositoryInParentFolders": "never",
+    "vscord.behaviour.suppressNotifications": true
 }

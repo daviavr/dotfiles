@@ -3,14 +3,14 @@
 groupSize=$(hyprctl activewindow -j | jq -r '.grouped | length')
 
 if [[ "$groupSize" == 0 ]]; then
-	hyprctl dispatch cyclenext $1
+	hyprctl dispatch movefocus $1
 else
-	if [[ "$2" == "r" ]]; then
+	if [[ "$1" == "r" ]]; then
 	 	hyprctl dispatch changegroupactive f
-	elif [[ "$2" == "l" ]]; then
+	elif [[ "$1" == "l" ]]; then
 		hyprctl dispatch changegroupactive b
 	else
-		hyprctl dispatch movefocus $2
+		hyprctl dispatch movefocus $1
 	fi
 fi
 

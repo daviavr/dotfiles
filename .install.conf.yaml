@@ -15,5 +15,8 @@
     ~/.config/VSCodium/User/keybindings.json: vscode/keybindings.json
     ~/.config/easyeffects: easyeffects
     ~/.config/alacritty: alacritty
+    ~/.config/kitty: 
+      path: kitty
+      force: true
     /etc/keyd/default.conf: keyd
 - shell: []

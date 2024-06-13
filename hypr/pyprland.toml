@@ -16,7 +16,7 @@ smart_focus = false
 
 [scratchpads.stb]
 animation = "fromTop"
-command = "alacritty --class dropin"
+command = "kitty --class dropin"
 class = "dropin"
 lazy = true
 size = "70% 40%"
