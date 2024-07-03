@@ -6,31 +6,11 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 
-export PATH=$PATH:/home/davi/.spicetify
-
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$PATH:$HOME/.local/bin
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
 export ZSH_TMUX_AUTOSTART=true
-
-export NNN_TMPFILE="/tmp/nnn"
-
-nnn_cd()                                                                                                   
-{
-    if ! [ -z "$NNN_PIPE" ]; then
-        printf "%s\0" "0c${PWD}" > "${NNN_PIPE}" !&
-    fi  
-}
-
-trap nnn_cd EXIT
-
-tere() {
-    local result=$(command tere "$@")
-    [ -n "$result" ] && cd -- "$result"
-}
-
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -131,20 +111,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/davi/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/davi/.miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/davi/.miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/davi/.miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 

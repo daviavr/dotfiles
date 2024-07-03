@@ -5,3 +5,7 @@
 	user = daviavr
 [init]
 	defaultBranch = main
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = codium --wait --diff $LOCAL $REMOTE
