@@ -7,14 +7,12 @@
     ~/.zshrc:
     ~/.gitconfig:
     ~/.config/zathura: zathura
-    ~/.local/scripts: scripts
-    ~/.config/waybar: waybar
-    ~/.config/hypr: hypr
-    ~/.config/tofi: tofi
-    ~/.config/VSCodium/User/settings.json: vscode/settings.json
-    ~/.config/VSCodium/User/keybindings.json: vscode/keybindings.json
+    ~/.config/Code/User/settings.json: vscode/settings.json
+    ~/.config/Code/User/keybindings.json: vscode/keybindings.json
     ~/.config/easyeffects: easyeffects
     ~/.config/alacritty: alacritty
     ~/.config/kitty: kitty
-    /etc/keyd/default.conf: keyd
+    ~/.fonts:
+      force: true
+    ~/.config/pop-shell/config.json: floating-window-exceptions.json
 - shell: []

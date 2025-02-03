@@ -1,0 +1,25 @@
+{
+  "float": [
+    {
+      "class": "pop-shell-example",
+      "title": "pop-shell-example"
+    },
+    {
+      "class": "spotify"
+    },
+    {
+      "class": "com.discordapp.Discord"
+    },
+    {
+      "class": "pop-shell-exceptions"
+    },
+    {
+      "class": "org.gnome.Nautilus"
+    },
+    {
+      "class": "org.gnome.Settings"
+    }
+  ],
+  "skiptaskbarhidden": [],
+  "log_on_focus": false
+}
