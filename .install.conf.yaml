@@ -12,6 +12,7 @@
     ~/.local/share/applications: applications
     ~/.config/alacritty: alacritty
     ~/.config/fish: fish
+    ~/.config/albert: albert
     ~/.config/Code/Users/keybindings.json: vscode/keybindings.json 
     ~/.config/Code/Users/settings.json: vscode/settings.json 
 - shell: []
