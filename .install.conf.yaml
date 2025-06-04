@@ -2,10 +2,12 @@
     link:
       create: true
       relink: true
+      force: true
 - clean: ['~','~/.config']
 - link: 
     ~/.gitconfig: gitconfig
     ~/.config/zathura: zathura
     ~/.local/scripts: scripts
     ~/.config/alacritty: alacritty
+    ~/.config/fish: fish
 - shell: []
