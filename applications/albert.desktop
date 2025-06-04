@@ -1,0 +1,67 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Categories=Utility;Utility;X-SuSE-DesktopUtility;
+Comment=A desktop agnostic launcher
+Comment[ar]=مُطلق سطح المكتب
+Comment[ca]=Un llançador agnòstic d'escriptori
+Comment[cs]=Agnostický spouštěč plochy
+Comment[de]=Ein agnostischer Desktop-Launcher
+Comment[es]=Un lanzador de programas que no depende de ningún escritorio
+Comment[fi]=Työpöydästä riippumaton ohjelmiston käynnistin ja kätevät hakutoiminnot
+Comment[id]=Peluncur agnostik destop
+Comment[it]=Un lanciatore desktop-indipendente
+Comment[ja]=デスクトップ不可知論ランチャー
+Comment[nl]=Een agnostische starter op het bureaublad
+Comment[pt]=Um lançador agnóstico de ambiente de trabalho
+Comment[pt_BR]=Um lançador agnóstico de desktop
+Comment[ru]=Независимый от рабочего стола лаунчер
+Comment[sk]=Desktopový agnostický spúšťač
+Comment[uk]=Незалежний від стільниці запускач
+Comment[zh_CN]=一个跨平台桌面启动器
+Exec=albert --platform xcb --platformtheme gnome
+GenericName=Launcher
+GenericName[ar]=مُشغل
+GenericName[ca]=Llançador
+GenericName[cs]=Spouštěč / startér
+GenericName[de]=Launcher
+GenericName[es]=Lanzador
+GenericName[fi]=Käynnistin
+GenericName[fr]=Lanceur
+GenericName[id]=Peluncur
+GenericName[it]=Lanciatore
+GenericName[ja]=ランチャー
+GenericName[lt]=Paleidiklis
+GenericName[nl]=Starter
+GenericName[pt]=Inicializador
+GenericName[pt_BR]=Lançador
+GenericName[ru]=Запуск приложений
+GenericName[sk]=Spúšťač spúšťanie
+GenericName[uk]=Запускач
+GenericName[zh_CN]=启动器
+Icon=albert
+Name=Albert
+Name[ar]=ألبرت
+Name[ca]=Albert
+Name[cs]=Albert
+Name[de]=Albert
+Name[es]=Albert
+Name[fr]=Albert
+Name[id]=Albert
+Name[it]=Albert
+Name[ja]=Albert
+Name[nl]=Albert
+Name[pt]=Albert
+Name[pt_BR]=Albert
+Name[ru]=Альберт
+Name[sk]=Albert
+Name[sv]=Albert
+Name[uk]=Albert
+Name[zh_CN]=Albert
+StartupNotify=false
+Type=Application
+Version=1.0
+MimeType=x-scheme-handler/albert
+# Give desktop environments time to init. Otherwise QGnomePlatform does not correctly pick up the palette.
+X-GNOME-Autostart-Delay=3
+
+

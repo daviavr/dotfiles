@@ -1,124 +1,217 @@
 {
-    "gruvboxMaterial.darkContrast": "hard",
-    "errorLens.enabled": true,
-    "window.titleBarStyle": "custom",
-    "telemetry.telemetryLevel": "crash",
-    "editor.minimap.enabled": false,
-    "editor.fontFamily": "FiraCode Nerd Font",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 16,
-    "editor.lineNumbers": "relative",
-    
-    "explorer.compactFolders": false,
-    "workbench.editor.labelFormat": "short",
-    "breadcrumbs.enabled": false,
-    "notebook.lineNumbers": "on",
-    "window.zoomLevel": 1,
-    "editor.bracketPairColorization.enabled": true,
-    "vim.overrideCopy": true,
-    "vim.useSystemClipboard": true,
-    "workbench.iconTheme": "material-icon-theme",
-    //KeyBindings
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "k"
-            ],
-            "after": [
-                "g",
-                "k",
-            ]
-        },
-        {
-            "before": [
-                "j"
-            ],
-            "after": [
-                "g",
-                "j",
-            ]
-        },
-        {
-            "before": [
-                "<C-d>"
-            ],
-            "after": [
-                "<C-d>",
-                "z",
-                "z"
-            ]
-        },
-        {
-            "before": [
-                "<C-u>"
-            ],
-            "after": [
-                "<C-u>",
-                "z",
-                "z"
-            ]
-        },
-        {
-            "before": [
-                "n"
-            ],
-            "after": [
-                "n",
-                "z",
-                "z"
-            ]
-        },
-        {
-            "before": [
-                "N"
-            ],
-            "after": [
-                "N",
-                "z",
-                "z"
-            ]
-        },
-    ],
-    "python.languageServer": "Pylance",
+  "gruvboxMaterial.darkContrast": "hard",
+  "errorLens.enabled": true,
+  "errorLens.enabledDiagnosticLevels": ["error", "warning", "info", "hint"],
+  "window.titleBarStyle": "custom",
+  "telemetry.telemetryLevel": "off",
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "CaskaydiaCove NF",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 16,
+  "editor.lineNumbers": "relative",
 
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "explorer.compactFolders": false,
+  "workbench.editor.labelFormat": "short",
+  "workbench.colorTheme": "Gruvbox Material Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "notebook.lineNumbers": "on",
+  "window.zoomLevel": 1,
+  "editor.bracketPairColorization.enabled": true,
+
+  "files.autoSaveWhenNoErrors": true,
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "workbench.editor.enablePreview": false,
+  "editor.stickyScroll.enabled": true,
+
+  //KeyBindings
+  "vim.overrideCopy": true,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<Space>",
+  "vim.handleKeys": {
+    "<C-f>": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
     },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["<S-h>"],
+      "commands": [":bprevious"]
     },
-    "editor.tokenColorCustomizations": {
-        "[*Dark*]": {
-            "textMateRules": [
-                {
-                    // function parameters
-                    "scope": "variable.parameter",
-                    "settings": {
-                        "fontStyle": "",
-                        "foreground": "#c97a31"
-                    }
-                },
-                //{
-                    //// language constants such as bools
-                    //"scope": "constant.language",
-                    //"settings": {
-                        //"fontStyle": "",
-                        //"foreground": "#FF299E"
-                    //}
-                //}
-            ]
+    {
+      "before": ["<S-l>"],
+      "commands": [":bnext"]
+    },
+    {
+      "before": ["leader", "s"],
+      "commands": [":vsplit"]
+    },
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z"]
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["leader", "f", "d"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.explorer.fileView.focus"]
+    },
+    {
+      "before": ["leader", "p", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] },
+    { "before": ["leader", "/"], "commands": [":s/a^"] }
+  ],
+  "vim.visualModeKeyBindings": [
+    // Stay in visual mode while indenting
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    // Move selected lines while staying in visual mode
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+    // toggle comment selection
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] },
+    //continue ai tab autocomplete
+    { "before": ["leader", "i"], "commands": ["continue.focusEdit"] },
+    { "before": ["leader", "l"], "commands": ["continue.focusContinueInput"] }
+  ],
+
+  "python.languageServer": "Pylance",
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.selectionHighlight": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tokenColorCustomizations": {
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          // function parameters
+          "scope": "variable.parameter",
+          "settings": {
+            "fontStyle": "",
+            "foreground": "#c97a31"
+          }
         }
+      ]
+    }
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true
+  },
+  "files.associations": {
+    "*.confi3": "i3"
+  },
+  "editor.wordWrap": "off",
+  "git.openRepositoryInParentFolders": "never",
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.fixAll": ["source.convertImportFormat"],
+  "python.defaultInterpreterPath": "/home/davi/Projects/router/zte-config-utility/.venv",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "/home/davi/.local/share/mise/installs/java/17",
+      "default": true
     },
-    "editor.semanticTokenColorCustomizations": {
-        "enabled": true,
-    },
-    "files.associations": {
-        "*.confi3": "i3"
-    },
-    "workbench.colorTheme": "Gruvbox Material Dark",
-    "zenMode.centerLayout": true,
-    "zenMode.restore": true,
-    "editor.wordWrap": "on",
-    "git.openRepositoryInParentFolders": "never",
-    "vscord.behaviour.suppressNotifications": true
+    {
+      "name": "JavaSE-21",
+      "path": "/home/davi/.local/share/mise/installs/java/21"
+    }
+  ],
+
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "mise.binPath": "/home/davi/.local/bin/mise",
+  "diffEditor.renderSideBySide": true,
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "compact",
+  "workbench.layoutControl.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "terminal.external.linuxExec": "alacritty",
+  "editor.linkedEditing": true,
+  "git.autofetch": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.hideUnchangedRegions.enabled": true
 }
