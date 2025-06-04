@@ -19,6 +19,7 @@ persistent=false
 [files]
 enabled=true
 fuzzy=false
+global_handler_enabled=true
 home\davi\Documents\followSymlinks=false
 home\davi\Documents\indexhidden=false
 home\davi\Documents\maxDepth=255
