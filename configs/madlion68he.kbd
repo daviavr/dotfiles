@@ -1,0 +1,119 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(deflocalkeys-linux
+  ´ 26
+  [ 27
+  ç 39
+  ~ 40
+  ' 41
+  ] 43
+  ; 53
+  \ 86
+  / 89
+)
+
+(defsrc ;; abnt2
+  esc    1      2      3      4      5      6      7      8      9      0      -      =      bspc
+  tab    q      w      e      r      t      y      u      i      o      p      ´      [      ]
+  caps   a      s      d      f      g      h      j      k      l      ç      ~      ret     
+  lsft   z      x      c      v      b      n      m      ,      .      ;      rsft
+  lctl   lmet   lalt                        spc                  ralt   comp   rctl
+)
+
+(deflayer qwerty-abnt2
+  @esc    1      2      3      4      5      6      7      8      9      0      -      =      bspc
+  tab     q      w      e      r      t      y      u      i      o      p      ´      [      /
+  @caps   a      s      d      f      g      h      j      k      l      ç      ~      ret  
+  lsft    z      x      c      v      b      n      m      ,      .      ;      rsft
+  lctl    lmet   lalt                        spc                  @ralt  comp   rctl
+)
+
+(deflayer programmer 
+  @esc     @pl    @lsb   @lbr   @lpt   @eq    @as    @rpt   @rbr   @rsb   @cr    @exc   @at    bspc
+  tab      q      w      e      r      t      y      u      i      o      p      grv    @dol   \
+  @ocaps   a      s      d      f      g      h      j      k      l      ;      /      _
+  @lsft    z      x      c      v      b      n      m      -      .      ,      @rsft
+  lctl     lmet   lalt                        spc                  @ralt  comp   rctl
+)
+
+(deflayer programmer_shift
+  @esc     @1     @2     @3     @4     @5     @6     @7     @8     @9     @0     @cfx   @bar   bspc
+  _        q      w      e      r      t      y      u      i      o      p      grv    @ast   @qtm
+  @ocaps   a      s      d      f      g      h      j      k      l      @:     @tiu   ret
+  _        z      x      c      v      b      n      m      _      @ltn   @gtn   _
+  lctl     lmet   lalt                        spc                  @ralt  comp   rctl
+)
+
+(deftemplate s (key)
+  (multi (unshift $key) $key)
+)
+
+(defalias
+  pl +
+  lsb [
+  lbr RS-[
+  lpt RS-9
+  eq =
+  as RS-7
+  rpt RS-0
+  rbr RS-]
+  rsb ]
+  cr (macro RS-´ spc)
+  exc RS-1
+  at RS-2
+  dol RS-4
+)
+
+(defalias
+  0 (t! s 0)
+  1 (t! s 1)
+  2 (t! s 2)
+  3 (t! s 3)
+  4 (t! s 4)
+  5 (t! s 5)
+  6 (t! s 6)
+  7 (t! s 7)
+  8 (t! s 8)
+  9 (t! s 9)
+  ast 8
+  cfx (macro ~ spc)
+  tiu (macro (unshift ~) spc)
+  qtm /
+  ltn ,
+  gtn .
+  bar \
+  : ;
+)
+
+(defvar
+ ht 100
+ mindinho.tt 65
+ anelar.tt 55
+ medio.tt 56
+ indicador.tt 56
+)
+
+(defalias
+  caps   (multi f24 (tap-hold-press $mindinho.tt $ht caps (layer-toggle caps-overrides)))
+  ocaps  (multi f24 (layer-toggle caps-overrides))
+  lsft   (multi f24 (multi (layer-toggle programmer_shift)) lsft)
+  rsft   (multi f24 (multi (layer-toggle programmer_shift)) rsft)
+  ralt   (tap-dance 300 ((layer-switch qwerty-abnt2) (layer-switch programmer)))
+  esc    (fork esc RS-grv (lsft))
+)
+
+(deflayermap (caps-overrides)
+  h left
+  j down
+  k up
+  l rght
+  u C-u
+  d C-d
+  bspc del
+  ç home
+  ~ end
+  ralt lrld
+  f RS-5
+)

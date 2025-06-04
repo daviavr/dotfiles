@@ -6,6 +6,7 @@
 - clean: ['~','~/.config']
 - link: 
     ~/.gitconfig: gitconfig
+    ~/.dotfiles/configs: configs
     ~/.config/zathura: zathura
     ~/.local/scripts: scripts
     ~/.local/share/applications: applications
