@@ -1,11 +1,7 @@
+[core]
+        sshCommand = ssh -F ~/.ssh/config
 [user]
 	email = daviavr@gmail.com
-	name = Davi
-[github]
-	user = daviavr
+	name = Davi Reis
 [init]
 	defaultBranch = main
-[diff]
-    tool = vscode
-[difftool "vscode"]
-    cmd = codium --wait --diff $LOCAL $REMOTE

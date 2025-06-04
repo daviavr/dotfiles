@@ -1,3 +1,14 @@
+[general]
 import = [
-    "~/.config/alacritty/themes/gruvbox_dark.toml"
+	"~/.config/alacritty/themes/gruvbox_dark.toml"
 ]
+
+[window]
+decorations = "None"
+
+[font]
+size = 14
+normal = { style = "CaskaydiaCove NF" }
+bold = { style = "CaskaydiaCove NF" }
+italic = { style = "CaskaydiaCove NF" }
+bold_italic = { style = "CaskaydiaCove NF" }

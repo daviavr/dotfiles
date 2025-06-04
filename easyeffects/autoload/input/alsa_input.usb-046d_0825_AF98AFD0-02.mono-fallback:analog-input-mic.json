@@ -1,6 +1,0 @@
-{
-    "device": "alsa_input.usb-046d_0825_AF98AFD0-02.mono-fallback",
-    "device-description": "Webcam C270 Mono",
-    "device-profile": "analog-input-mic",
-    "preset-name": "noise_reduction"
-}
