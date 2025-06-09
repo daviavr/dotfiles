@@ -2,10 +2,10 @@
     link:
       create: true
       relink: true
-      force: true
 - clean: ['~','~/.config']
 - link: 
     ~/.gitconfig: gitconfig
+    ~/.tmux.conf: tmux.conf
     ~/.dotfiles/configs: configs
     ~/.config/zathura: zathura
     ~/.local/scripts: scripts
