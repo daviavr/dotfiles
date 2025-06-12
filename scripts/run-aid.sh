@@ -8,4 +8,4 @@ gbackend_path=~/nonblobs/work/general
 gbackend="$gbackend_path/mvnw spring-boot:run -f $gbackend_path/pom.xml"
 
 tmux new-session -ds run-backend $backend 
-tmux new-session -ds run-gbackend $gbackend 
+#tmux new-session -ds run-gbackend $gbackend 
