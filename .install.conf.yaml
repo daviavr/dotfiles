@@ -3,6 +3,8 @@
       create: true
       relink: true
 - clean: ['~','~/.config']
+- create:
+    - ~/nonblobs
 - link: 
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
