@@ -13,11 +13,8 @@
     ~/.config/:
       glob: true
       path: config/*
-      relink: true
       exclude: [ config/Code ]
     ~/.config/Code/User/:
-      create: true
       glob: true
       path: vscode/*
-      relink: true
 - shell: []
