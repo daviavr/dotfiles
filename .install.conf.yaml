@@ -2,17 +2,22 @@
     link:
       create: true
       relink: true
+      force: true
 - clean: ['~','~/.config']
 - link: 
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
     ~/.dotfiles/configs: configs
-    ~/.config/zathura: zathura
     ~/.local/scripts: scripts
     ~/.local/share/applications: applications
-    ~/.config/alacritty: alacritty
-    ~/.config/fish: fish
-    ~/.config/albert: albert
-    ~/.config/Code/Users/keybindings.json: vscode/keybindings.json 
-    ~/.config/Code/Users/settings.json: vscode/settings.json 
+    ~/.config/:
+      glob: true
+      path: config/*
+      relink: true
+      exclude: [ config/Code ]
+    ~/.config/Code/User/:
+      create: true
+      glob: true
+      path: vscode/*
+      relink: true
 - shell: []

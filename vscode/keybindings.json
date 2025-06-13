@@ -19,14 +19,10 @@
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
   },
-  // {
-  //   "command": "workbench.action.toggleSidebarVisibility",
-  //   "key": "ctrl+e"
-  // },
   {
-    "command": "workbench.files.action.focusFilesExplorer",
+    "command": "workbench.action.toggleSidebarVisibility",
     "key": "ctrl+e",
-    "when": "editorTextFocus"
+    "when": "sideBarFocus"
   },
   {
     "command": "workbench.files.action.focusFilesExplorer",
@@ -84,5 +80,19 @@
   {
     "key": "ctrl+i",
     "command": "composerMode.agent"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.view.extension.project-manager",
+    "when": "!sideBarFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quit"
   }
 ]

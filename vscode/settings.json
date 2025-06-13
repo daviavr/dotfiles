@@ -188,6 +188,25 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "mise.binPath": "/home/davi/.local/bin/mise",
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "toggle",
+  "workbench.layoutControl.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "terminal.external.linuxExec": "alacritty",
+  "editor.linkedEditing": true,
+  "git.autofetch": false,
+  "liveServer.settings.donotVerifyTags": true,
+
+  //Diff Editor
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+
+  //Java
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-17",
@@ -200,18 +219,12 @@
     }
   ],
 
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "mise.binPath": "/home/davi/.local/bin/mise",
-  "diffEditor.renderSideBySide": true,
-  "window.commandCenter": false,
-  "window.menuBarVisibility": "compact",
-  "workbench.layoutControl.enabled": false,
-  "chat.commandCenter.enabled": false,
-  "terminal.external.linuxExec": "alacritty",
-  "editor.linkedEditing": true,
-  "git.autofetch": true,
-  "diffEditor.ignoreTrimWhitespace": true,
-  "diffEditor.hideUnchangedRegions.enabled": true
+  "java.help.firstView": "none",
+  "java.help.showReleaseNotes": false,
+  "java.debug.settings.debugSupportOnDecompiledSource": "off",
+  "java.server.launchMode": "Standard",
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -Xlog:disable",
+  "java.autobuild.enabled": false,
+  "java.configuration.detectJdksAtStart": false,
+  "java.format.enabled": false
 }
