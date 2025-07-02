@@ -191,7 +191,6 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "mise.binPath": "/home/davi/.local/bin/mise",
   "window.commandCenter": false,
   "window.menuBarVisibility": "toggle",
   "workbench.layoutControl.enabled": false,
@@ -210,12 +209,8 @@
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-17",
-      "path": "/home/davi/.local/share/mise/installs/java/17",
+      "path": "/home/davi/.blobs/jdk-17",
       "default": true
-    },
-    {
-      "name": "JavaSE-21",
-      "path": "/home/davi/.local/share/mise/installs/java/21"
     }
   ],
 
