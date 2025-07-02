@@ -222,9 +222,9 @@
   "java.help.firstView": "none",
   "java.help.showReleaseNotes": false,
   "java.debug.settings.debugSupportOnDecompiledSource": "off",
-  "java.server.launchMode": "Standard",
+  "java.server.launchMode": "Hybrid",
   "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -Xlog:disable",
-  "java.autobuild.enabled": false,
+  "java.autobuild.enabled": true,
   "java.configuration.detectJdksAtStart": false,
-  "java.format.enabled": false
+  "java.format.enabled": true
 }
