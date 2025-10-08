@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=OpenRGB
+Comment=Control RGB lighting
+Exec=/home/davi/AppImages/openrgb.appimage
+TryExec=/home/davi/AppImages/openrgb.appimage
+Icon=/home/davi/AppImages/.icons/openrgb.png
+
+Terminal=false
+Categories=Utility;
+
+X-AppImage-Version=8682f8

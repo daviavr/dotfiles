@@ -1,0 +1,28 @@
+[Desktop Entry]
+Name=Visual Studio Code (on my-distrobox)
+Comment=Code Editing. Redefined.
+GenericName=Text Editor (on my-distrobox)
+Exec=/usr/bin/distrobox-enter  -n my-distrobox  --   /usr/share/code/code  %F 
+Icon=vscode
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=TextEditor;Development;IDE;
+MimeType=application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=vscode;
+
+[Desktop Action new-empty-window]
+Name=New Empty Window (on my-distrobox)
+Name[cs]=Nové prázdné okno (on my-distrobox)
+Name[de]=Neues leeres Fenster (on my-distrobox)
+Name[es]=Nueva ventana vacía (on my-distrobox)
+Name[fr]=Nouvelle fenêtre vide (on my-distrobox)
+Name[it]=Nuova finestra vuota (on my-distrobox)
+Name[ja]=新しい空のウィンドウ (on my-distrobox)
+Name[ko]=새 빈 창 (on my-distrobox)
+Name[ru]=Новое пустое окно (on my-distrobox)
+Name[zh_CN]=新建空窗口 (on my-distrobox)
+Name[zh_TW]=開新空視窗 (on my-distrobox)
+Exec=/usr/bin/distrobox-enter  -n my-distrobox  --   /usr/share/code/code --new-window  %F 
+Icon=vscode

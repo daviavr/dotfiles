@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Torrenting
+GenericName=Terminal entering Torrenting
+Comment=Terminal entering Torrenting
+Categories=Distrobox;System;Utility
+Exec=/usr/bin/distrobox enter  torrenting
+Icon=/home/davi/.local/share/icons/distrobox/fedora.png
+Keywords=distrobox;
+NoDisplay=false
+Terminal=true
+TryExec=/usr/bin/distrobox
+Type=Application
+Actions=Remove;
+
+[Desktop Action Remove]
+Name=Remove Torrenting from system
+Exec=/usr/bin/distrobox rm  torrenting

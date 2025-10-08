@@ -221,5 +221,6 @@
   "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -Xlog:disable",
   "java.autobuild.enabled": true,
   "java.configuration.detectJdksAtStart": false,
-  "java.format.enabled": true
+  "java.format.enabled": true,
+  "makefile.configureOnOpen": true
 }

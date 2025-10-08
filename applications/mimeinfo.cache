@@ -1,0 +1,5 @@
+[MIME Cache]
+application/x-code-workspace=code.desktop;my-distrobox-code.desktop;
+application/x-void-workspace=void.desktop;
+x-scheme-handler/albert=albert.desktop;
+x-scheme-handler/bitwarden=bitwarden.desktop;

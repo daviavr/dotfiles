@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=My-distrobox
+GenericName=Terminal entering My-distrobox
+Comment=Terminal entering My-distrobox
+Categories=Distrobox;System;Utility
+Exec=/usr/bin/distrobox enter  my-distrobox
+Icon=/home/davi/.local/share/icons/distrobox/fedora.png
+Keywords=distrobox;
+NoDisplay=false
+Terminal=true
+TryExec=/usr/bin/distrobox
+Type=Application
+Actions=Remove;
+
+[Desktop Action Remove]
+Name=Remove My-distrobox from system
+Exec=/usr/bin/distrobox rm  my-distrobox
