@@ -15,3 +15,5 @@ fish_add_path ~/.local/bin
 bind ctrl-f ~/.local/scripts/sessionizer
 
 bind ctrl-s ~/.local/scripts/scripter
+
+alias helix hx
