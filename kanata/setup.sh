@@ -6,16 +6,15 @@
 
 # CONFIGURATION
 #
-# REQUIRED: Set the path to your Kanata config relative to $HOME.
-# E.g., if your config is at ~/somewhere/my-kanata.kbd, use "somewhere/my-kanata.kbd".
-KANATA_CONFIG_REL_PATH=".dotfiles/configs/madlion68he.kbd"
+# Kanata config file name, expected to live in the repo root (one level up from this script)
+KANATA_CONFIG_NAME="config.kbd"
 
 # System location where the kanata config file will be placed
 # (DO NOT EDIT)
-SYSTEM_KANATA_CONFIG_DST="/etc/kanata/kanata-config.kbd"
+SYSTEM_KANATA_CONFIG_DST="/etc/kanata/config.kbd"
 
 # Kanata version to download
-KANATA_VERSION="v1.8.1"
+KANATA_VERSION="v1.12.0"
 
 # Dedicated user/group names
 KANATA_USER="kanata"
@@ -36,37 +35,13 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 # DETERMINE SOURCE CONFIG FILE PATH
-# Try finding it relative to the current $HOME (might be /root if using sudo)
-USER_KANATA_CONFIG_SRC="$HOME/$KANATA_CONFIG_REL_PATH"
+# Resolve relative to the script's location, so it works regardless of $HOME or sudo context
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+USER_KANATA_CONFIG_SRC="$SCRIPT_DIR/$KANATA_CONFIG_NAME"
 
-# If not found AND we are using sudo, try finding it relative to the original user's $HOME
-if [ ! -f "$USER_KANATA_CONFIG_SRC" ] && [ -n "$SUDO_USER" ]; then
-    echoinfo "Config not found via current HOME ($HOME), attempting lookup via SUDO_USER ($SUDO_USER)..."
-    SUDO_USER_HOME=$(getent passwd "$SUDO_USER" | cut -d: -f6)
-
-    if [ -z "$SUDO_USER_HOME" ]; then
-         echoerror "Could not determine home directory for user $SUDO_USER."
-         exit 1
-    fi
-
-    ALT_CONFIG_PATH="$SUDO_USER_HOME/$KANATA_CONFIG_REL_PATH"
-    echoinfo "Checking alternative path: $ALT_CONFIG_PATH"
-
-    if [ -f "$ALT_CONFIG_PATH" ]; then
-        echoinfo "Found config file using SUDO_USER: $ALT_CONFIG_PATH"
-        # Update the variable to use the correctly found path
-        USER_KANATA_CONFIG_SRC="$ALT_CONFIG_PATH"
-    else
-        # Config not found in either location
-        echoerror "Kanata config file not found at initial path: $HOME/$KANATA_CONFIG_REL_PATH"
-        echoerror "And also not found at alternative path: $ALT_CONFIG_PATH"
-        echoerror "Please ensure the relative path '$KANATA_CONFIG_REL_PATH' exists in your home directory."
-        exit 1
-    fi
-# If not found and not using sudo (or SUDO_USER not set), then it just doesn't exist
-elif [ ! -f "$USER_KANATA_CONFIG_SRC" ]; then
+if [ ! -f "$USER_KANATA_CONFIG_SRC" ]; then
     echoerror "Kanata config file not found at: $USER_KANATA_CONFIG_SRC"
-    echoerror "Please ensure the relative path '$KANATA_CONFIG_REL_PATH' exists in your home directory ($HOME)."
+    echoerror "Please ensure '$KANATA_CONFIG_NAME' exists in the repository root (one level up from this script)."
     exit 1
 fi
 
@@ -113,23 +88,31 @@ echo "KERNEL==\"uinput\", MODE=\"0660\", GROUP=\"$UINPUT_GROUP\", OPTIONS+=\"sta
 #========================
 # STEP 5: Download and Install Kanata
 #========================
-KANATA_URL="https://github.com/jtroo/kanata/releases/download/${KANATA_VERSION}/kanata"
+KANATA_URL="https://github.com/jtroo/kanata/releases/download/${KANATA_VERSION}/linux-binaries-x64.zip"
 KANATA_BIN_PATH="/usr/local/bin/kanata"
+KANATA_TMP_DIR="$(mktemp -d)"
+KANATA_TMP_ZIP="$KANATA_TMP_DIR/kanata-linux.zip"
 
 echoinfo "Stopping kanata.service (if running) before download..."
 systemctl stop kanata.service > /dev/null 2>&1 || true # Stop the service, ignore errors
 
 echoinfo "Downloading Kanata ${KANATA_VERSION} from ${KANATA_URL}..."
 # Use curl with -fSL to follow redirects, show errors, and fail silently on HTTP errors
-curl -fSL -o "$KANATA_BIN_PATH" "$KANATA_URL"
+curl -fSL -o "$KANATA_TMP_ZIP" "$KANATA_URL"
 if [ $? -ne 0 ]; then
     echoerror "Failed to download Kanata. Check URL or network connection."
     exit 1
 fi
 
-echoinfo "Setting permissions on ${KANATA_BIN_PATH}..."
-chown root:"$KANATA_USER" "$KANATA_BIN_PATH"
-chmod 754 "$KANATA_BIN_PATH"
+echoinfo "Extracting kanata_linux_x64..."
+unzip -o -j "$KANATA_TMP_ZIP" "kanata_linux_x64" -d "$KANATA_TMP_DIR"
+if [ $? -ne 0 ]; then
+    echoerror "Failed to extract Kanata binary from the downloaded archive."
+    exit 1
+fi
+
+echoinfo "Installing binary to ${KANATA_BIN_PATH}..."
+install -m 754 -o root -g "$KANATA_USER" "$KANATA_TMP_DIR/kanata_linux_x64" "$KANATA_BIN_PATH"
 
 #========================
 # STEP 6: Create Systemd Service Unit
@@ -191,7 +174,23 @@ WantedBy=multi-user.target
 EOF
 
 #========================
-# STEP 7: Reload Systemd, Enable & Start Service
+# STEP 7: SELinux file contexts (openSUSE with SELinux enforcing)
+#========================
+if command -v restorecon > /dev/null 2>&1 && [ "$(getenforce 2>/dev/null)" = "Enforcing" ]; then
+    if ! command -v audit2allow > /dev/null 2>&1; then
+        echoerror "SELinux is enforcing but 'audit2allow' is missing."
+        echoerror "Install it with: zypper install policycoreutils-python-utils"
+        exit 1
+    fi
+
+    echoinfo "Restoring default SELinux contexts on installed files..."
+    restorecon -Rv /usr/local/bin/kanata /etc/kanata /etc/systemd/system/kanata.service /etc/udev/rules.d/50-kanata.rules
+else
+    echoinfo "SELinux not in enforcing mode (or tools absent), skipping relabeling."
+fi
+
+#========================
+# STEP 8: Reload Systemd, Enable & Start Service
 #========================
 echoinfo "Reloading systemd daemon..."
 systemctl daemon-reload
@@ -206,6 +205,8 @@ echoinfo "-----------------------------------------------------"
 echoinfo "Kanata setup script finished!"
 echoinfo "Please REBOOT your system for all changes (especially udev rules) to take effect properly."
 echoinfo "After rebooting, check status with: systemctl status kanata.service"
+echoinfo "If the service fails on SELinux, inspect denials with:"
+echoinfo "  ausearch -m avc -ts recent | audit2allow -R"
 echoinfo "-----------------------------------------------------"
 
 exit 0

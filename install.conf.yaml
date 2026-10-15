@@ -7,7 +7,6 @@
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
     ~/.local/scripts: scripts
-    ~/.local/share/applications: applications
     ~/.config/:
       glob: true
       path: config/*
