@@ -4,6 +4,10 @@
       relink: true
 - clean: ['~','~/.config']
 - link: 
+    ~/.zshrc: zshrc
+    ~/.p10k.zsh: p10k.zsh
+    ~/.zsh_plugins.txt: zsh_plugins.txt
+    ~/.antidote: antidote
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
     ~/.local/scripts: scripts
