@@ -16,7 +16,12 @@
       glob: true
       path: config/*
       relink: true
-      exclude: [ config/Code ]
+      exclude: [ config/Code, config/systemd ]
+    ~/.config/systemd/user/:
+      create: true
+      glob: true
+      path: config/systemd/user/*
+      relink: true
     ~/.config/Code/User/:
       create: true
       glob: true
