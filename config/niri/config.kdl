@@ -12,14 +12,12 @@ cursor {
     xcursor-size 24
 }
 
-spawn-at-startup "sway-audio-idle-inhibit"
 spawn-at-startup "swayidle" "-w" \
     "timeout" "180" "noctalia msg session lock" \
     "timeout" "300" "systemctl suspend-then-hibernate" \
     "before-sleep" "playerctl --all-players stop && noctalia msg session lock"
 
 spawn-at-startup "fcitx5"
-spawn-at-startup "flatpak" "run" "com.github.wwmm.easyeffects" "--service-mode"
 
 // Input device configuration.
 // Find the full list of options on the wiki:
@@ -71,7 +69,7 @@ input {
 // Remember to uncomment the node by removing "/-"!
 output "eDP-1" {
     mode "1920x1200@60.003"
-    scale 1.5
+    scale 1.25
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     transform "normal"
