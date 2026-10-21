@@ -1,0 +1,15 @@
+[Unit]
+Description=Idle manager for the Wayland session
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/swayidle -w \
+    timeout 180 'noctalia msg session lock' \
+    timeout 300 'systemctl suspend-then-hibernate' \
+    before-sleep '/bin/sh -c "playerctl --all-players stop && noctalia msg session lock"'
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target

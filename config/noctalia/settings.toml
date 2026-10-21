@@ -1,8 +1,8 @@
-config_version = 14
+config_version = 15
 
 [accessibility]
 high_contrast = false
-ui_scale = 1.1000000238418579
+ui_scale = 1.1500000096857548
 
 [audio]
 enable_overdrive = false
@@ -285,6 +285,7 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@eDP-1" ]
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
@@ -292,11 +293,11 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@eDP-1" ]
     [lockscreen_widgets.widget."lockscreen-login-box@winit"]
     box_height = 196.0
     box_width = 810.0
-    cx = 465.0
-    cy = 933.0
+    cx = 462.0
+    cy = 918.77490234375
     output = "winit"
-    placement_height = 1115.0
-    placement_width = 930.0
+    placement_height = 1098.0
+    placement_width = 924.0
     rotation = 0.0
     type = "login_box"
 
@@ -312,6 +313,7 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@eDP-1" ]
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
@@ -384,6 +386,9 @@ enabled = []
     kind = "git"
     location = "https://github.com/noctalia-dev/community-plugins"
     name = "community"
+
+[security_migrations]
+calendar_credentials_v1 = true
 
 [shell]
 app_icon_colorize = false
@@ -603,22 +608,11 @@ wallpaper_scheme = "m3-tonal-spot"
     community_ids = [ "steam" ]
     enable_community_templates = true
 
-[wallpaper]
-directory_dark = ""
-directory_light = ""
-edge_smoothness = 0.30000001192092896
-fill_color = ""
-fill_mode = "crop"
-per_monitor_directories = false
-transition = [ "fade", "wipe", "disc", "stripes", "zoom", "honeycomb" ]
-transition_duration = 1500.0
-transition_on_startup = false
+[theme_templates]
+applied_builtin_ids = "ghostty gtk3 gtk4 kcolorscheme niri qt"
 
-    [wallpaper.automation]
-    enabled = false
-    interval_seconds = 1800
-    order = "random"
-    recursive = true
+[wallpaper_panel]
+flatten = false
 
 [weather]
 effects = true

@@ -27,4 +27,7 @@
       glob: true
       path: vscode/*
       relink: true
-- shell: []
+- shell:
+    - [systemctl --user daemon-reload, Reloading systemd user units]
+    - command: for unit in config/systemd/user/*.service; do systemctl --user enable "$(basename "$unit")"; done
+      description: Enabling systemd user services

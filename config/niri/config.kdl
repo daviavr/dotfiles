@@ -12,10 +12,7 @@ cursor {
     xcursor-size 24
 }
 
-spawn-at-startup "swayidle" "-w" \
-    "timeout" "180" "noctalia msg session lock" \
-    "timeout" "300" "systemctl suspend-then-hibernate" \
-    "before-sleep" "playerctl --all-players stop && noctalia msg session lock"
+// swayidle runs as a systemd user service: ~/.config/systemd/user/swayidle.service
 
 spawn-at-startup "fcitx5"
 
@@ -238,7 +235,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return repeat=false hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty" "+new-window"; }
     Mod+D hotkey-overlay-title="Run an Application: launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn "noctalia" "msg" "session" "lock"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
